@@ -1,0 +1,640 @@
+@import url(https://fonts.bunny.net/css?family=archivo:100,300,400,800|barrio:400|roboto-mono:400);
+
+/*global reset*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*reset anchor styles*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*global styling for controlling scaling images*/
+
+img {
+    max-width: 100%;
+}
+
+
+/*Styling for all screen sizes*/
+body {
+    background-color: #211a12;
+    color: #fa4f05;
+    font-family: 'Archivo', sans-serif;
+    font-size: 10px;
+    background-image: url(images/bg.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #211a12;
+    border: 1px solid #fa4f05;
+    padding: 1rem;
+    position: relative;
+    z-index: 200;
+}
+
+header h1,
+header p {
+    /*    grid-column: 1/2;*/
+    text-transform: uppercase;
+    margin: auto 0;
+    font-size: 2.3rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+}
+
+header a:hover {
+    color: #f2f211;
+}
+
+/*---------------------------*/
+/*STYLING FOR INCOMPATIBLE / SMALL SCREENS*/
+/*vvvvvvvvvvvvvvvvvvvvvvv*/
+
+/*hide features for small screen*/
+nav,
+#interact,
+.hamburger,
+main {
+    display: none;
+    /*positioning main div at 1 so mobile nav appears on top of it properly*/
+    z-index: 1;
+    position: relative;
+}
+
+/*display small screen message*/
+#small_screen {
+    height: 70vh;
+    display: flex;
+}
+
+#small_screen p {
+    font-size: 2rem;
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+/*END INCOMPATIBLE SCREEN STYLING*/
+
+
+/*mobile device specific media query*/
+/*vvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+/*media query that checks for landscape mobile devices*/
+/*https://stackoverflow.com/questions/62182220/how-to-target-only-landscape-mobile-devices-without-affecting-desktop-via-css*/
+
+@media screen and (pointer:coarse) and (orientation: landscape) {
+
+    header a {
+        z-index: 2;
+    }
+
+    nav {
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0 0 0 / 75%);
+    }
+
+    nav ul {
+        margin: auto;
+    }
+
+    nav ul li {
+        list-style: none;
+        margin: 1rem 1rem;
+        font-family: Barrio, Display;
+        font-size: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: flex-end;
+        max-height: 2.5rem;
+        grid-column: 2/3;
+        z-index: 1;
+    }
+
+    #smallCredits {
+        font-size: 0.7rem;
+        text-align: center;
+        z-index: 3;
+        position: fixed;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #smallCredits a {
+        text-decoration: underline;
+    }
+
+    #smallCredits a:hover {
+        color: #f2f211;
+    }
+
+    #largeCredits {
+        display: none;
+    }
+
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^*/
+/*end mobile device media query*/
+
+
+/*computer screen specific media query*/
+/*vvvvvvvvvvvvvvvvvvvvvvv*/
+
+@media only screen and (min-width: 1080px) {
+    nav {
+        /*    margin: auto 0;*/
+        grid-column: 2/3;
+        min-height: 1rem;
+        display: none;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 1rem;
+        font-size: 1.2rem;
+        text-align: right;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: flex-end;
+        max-height: 2.5rem;
+        grid-column: 2/3;
+        cursor: pointer;
+        min-height: 2rem;
+        margin: auto 0;
+    }
+
+    /*credits styling at bottom of index*/
+    #smallCredits {
+        display: none;
+    }
+
+    #largeCredits {
+        font-size: 1rem;
+        text-align: center;
+        z-index: 3;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #largeCredits a {
+        text-decoration: underline;
+    }
+
+    #largeCredits a:hover {
+        color: #f2f211;
+    }
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^*/
+/*end computer screen media query*/
+
+
+/*-----------------------------------*/
+/*media query landscape mobile screen and also for a minimum width*/
+/*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+/*styles that are for both mobile and desktop but need to be hidden otherwise to display the incompatible screen warning*/
+
+@media screen and (pointer:coarse) and (orientation: landscape),
+(min-width: 1080px) and (min-height: 600px) {
+
+    /*hide small screen warning elements*/
+    #small_screen {
+        display: none;
+    }
+
+    /*make hidden for small screen features visible again - this group was moved - need checking*/
+
+    main {
+        display: block;
+    }
+
+
+    /*css styling for navigation including onclick elements*/
+    /*vvvvvvvvvvvvvvvvvv*/
+    .hamburger {
+        grid-column: 3/4;
+        max-height: 2.5rem;
+        cursor: pointer;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 0.3fr;
+    }
+
+    header h1,
+    header p {
+        font-size: min(5vh, 3vw);
+        font-family: "Archivo", sans-serif;
+    }
+
+    .menuIcon {
+        background-image: url(images/nav_hover.svg);
+    }
+
+    .menuIcon:hover {
+        background-image: url(images/nav_hover_.svg);
+    }
+
+    .closeIcon {
+        background-image: url(images/x.svg);
+    }
+
+    .closeIcon:hover {
+        background-image: url(images/x_hover.svg)
+    }
+
+
+    /*shared styling of icons*/
+    .closeIcon,
+    .menuIcon {
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+    }
+
+    /*^^^^^^^^^^^^^^^*/
+    /*end navigation styling*/
+
+
+    /*#index page: main content grid setup and styling*/
+    /*vvvvvvvvvvvvvvvvv*/
+
+    #interact {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        margin: auto;
+        height: 85vh;
+        align-items: center;
+        /*hide the link extending outside the div*/
+        overflow: hidden;
+    }
+
+    #interact h2 {
+        font-family: Barrio, Display;
+        font-weight: normal;
+        line-height: 0.9;
+        text-align: center;
+        display: block;
+    }
+
+    /*hover styles for big main links on index*/
+    #interact .hoverLink:hover {
+        color: #f2f211;
+        z-index: 101;
+    }
+
+    /*max width for links on index page to keep them all fitting on screen*/
+    /*using vh vw to keep all the text on screen at different viewports as much as possible*/
+
+    #_outside {
+        font-size: min(17.5vw, 26vh);
+    }
+
+    #_stand {
+        font-size: min(11.4vw, 17vh);
+    }
+
+    #_centerfield {
+        font-size: min(11vw, 16.5vh);
+    }
+
+    /*positioning index images*/
+    #indImg1 {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform-origin: center;
+        transform: rotate(180deg);
+        z-index: 1;
+    }
+
+    #indImg2 {
+        position: fixed;
+        bottom: -40px;
+        left: 20%;
+        z-index: 1;
+    }
+
+    #indImg3 {
+        position: fixed;
+        bottom: -40px;
+        right: 6%;
+        z-index: 1;
+    }
+
+    /*control height of index images*/
+    #interact img {
+        height: 65vh;
+    }
+
+
+
+    /*^^^^^^^^^^^^^^^^^^^^*/
+    /*end index content styling*/
+
+
+    /*styling for intro overlay*/
+    /*vvvvvvvvvvvvvvvvvvvvv*/
+    #screencover {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(32 26 15 / 50%);
+        z-index: 100;
+
+    }
+
+    #intro {
+        position: fixed;
+        /*centre fixed element from https://www.geeksforgeeks.org/how-to-center-an-element-using-positionfixed-in-css/*/
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(4deg);
+        font-family: "Roboto Mono", Display;
+        font-size: 4vh;
+        text-align: center;
+        background-color: #211a12;
+    }
+
+    #expBtn p {
+        display: block;
+        padding: 1vh 2vh;
+        width: 30%;
+        margin: 3vh auto;
+        font-size: 2vh;
+        font-family: Archivo, sans-serif;
+        border: 1px solid #fa4f05;
+        cursor: pointer;
+    }
+
+    #expBtn:hover p {
+        border: 1px solid #f2f211;
+        color: #f2f211;
+    }
+
+    /*^^^^^^^^^^^^^^^^^^*/
+    /*end of intro overlay styling*/
+
+
+    /*horizontal scrolling content page styling*/
+    /*vvvvvvvvvvvvvvvvvv*/
+
+    /*horizontal scroll - make div full viewport height and overflow horizontally for horizontal scroll*/
+    #horizontalScroll {
+        width: 100%;
+        height: 100vh;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        /*scroll behaviour does not work properly for the horizontal scroll script i am using*/
+        /*scroll-behavior: smooth;*/
+        scrollbar-color: #211a12;
+        /*only works on firefox*/
+    }
+
+    /*fix nav element at the top of the screen for horizontal scrolling*/
+    #fixNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /*positioning nav in front of the content*/
+        z-index: 2;
+    }
+
+    /*grid for horizontal scroll*/
+    #scrollGridOutside {
+        display: grid;
+        grid-template-columns: 50vw repeat(4, 90vw) 200px;
+        grid-template-rows: 33vh 33vh 35vh;
+        height: 100vh;
+        /*make the images align with the bottom of the screen/grid*/
+        align-items: end;
+        /*        overflow-y: hidden;*/
+    }
+
+    #scrollGridStand {
+        display: grid;
+        grid-template-columns: 50vw repeat(3, 90vw) 200px;
+        grid-template-rows: 33vh 33vh 35vh;
+        height: 100vh;
+        align-items: end;
+    }
+
+    #scrollGridCenter {
+        display: grid;
+        grid-template-columns: 50vw repeat(4, 90vw) 200px;
+        grid-template-rows: 33vh 33vh 35vh;
+        height: 100vh;
+        align-items: end;
+    }
+
+    /*styling for the background heading to fit the content pages - different length titles on different pages need different sizes*/
+    #scrollGridOutside h1 {
+        font-size: 28vw;
+    }
+
+    #scrollGridStand h1 {
+        font-size: 17.8vw;
+    }
+
+    #scrollGridCenter h1 {
+        font-size: 17.8vw;
+    }
+
+    #horizontalScroll h1 {
+        position: fixed;
+        left: 10;
+        top: 50vh;
+        transform: translate(0, -50%);
+        font-family: 'Barrio', display;
+        z-index: -10;
+        font-weight: normal;
+    }
+
+    /*making the spacer div fit the top-left corner of the page to fix navigation to it from the return to start button*/
+    #_spacer {
+        grid-row: 1 / 2;
+        height: 100%;
+        width: 100%;
+    }
+
+    /*styling for scroll prompt*/
+    #scrPrompt {
+        grid-area: 3 / 1 / 4 / 2;
+        font-size: 1.8rem;
+        font-family: "Roboto Mono", sans-serif;
+        margin: 0 0 10vh 10vh;
+    }
+
+    /*fullheight divs on the grid*/
+    .fullHeight {
+        margin-top: 70px;
+        grid-row: 1/4;
+    }
+
+    #horizontalScroll img {
+        width: 100%;
+        max-width: 70vw;
+        max-height: 90vh;
+    }
+
+    #scrPrompt p {
+        display: inline-block;
+    }
+
+    #scrPrompt img {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+        margin: auto 0;
+    }
+
+    /*styling for info boxes attached to graphics*/
+    .scrollInfoText {
+        background-color: none;
+        margin: auto 20vw auto auto;
+        /*making sure the text appears on top*/
+        z-index: 5;
+        font-size: min(2rem, 4vh);
+        width: 34vw;
+        /*give the text boxes a marker to know where to hover to read them*/
+        background-image: url(images/nav_hover_.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40px;
+        transition: all 1s;
+    }
+
+    /*make the paragraphs appear on hover*/
+    .textHover {
+        opacity: 0;
+        transition: opacity 1s;
+        min-height: 3rem;
+    }
+
+    .textHover:hover {
+        opacity: 100;
+        background-color: #211a12;
+        min-height: 3rem;
+    }
+
+    .scrollInfoText blockquote {
+        font-style: italic;
+        text-indent: 2rem;
+    }
+
+
+    /*grid positioning for graphics and text on content pages*/
+    #scrImg1 {
+        grid-column-start: 2;
+    }
+
+    #scrText1 {
+        grid-area: 2 / 2 / 3 / 3;
+        transform: rotate(8deg);
+    }
+
+    #scrImg2 {
+        grid-column-start: 3;
+    }
+
+    #scrText2 {
+        grid-area: 2 / 3 / 3 / 4;
+        transform: rotate(-4deg);
+    }
+
+    #scrImg3 {
+        grid-column-start: 4;
+    }
+
+    #scrText3 {
+        grid-area: 2 / 4 / 3 / 5;
+        transform: rotate(2deg);
+    }
+
+    #scrImg4 {
+        grid-column-start: 5;
+    }
+
+    #scrText4 {
+        grid-area: 2 / 5 / 3 / 6;
+        transform: rotate(-7deg);
+    }
+
+    /*some text boxes are too big for smaller screens so need moving up to fit on the page*/
+    #scrollGridStand #scrText2 {
+        transform: translateY(-15vh) rotate(-4deg);
+    }
+
+    #scrollGridCenter #scrText3 {
+        transform: translateY(-15vh) rotate(2deg);
+    }
+
+    #scrollGridCenter #scrText4 {
+        transform: translateY(-15vh) rotate(-3deg);
+    }
+
+    /*the final text box needs a larger width as well as it has by far the most text*/
+    #scrollGridCenter #scrText4 {
+        width: 54vw;
+    }
+
+    /*styling for return to start (left hand side) button*/
+    #scrollGridOutside #start,
+    #scrollGridCenter #start {
+        grid-column-start: 6;
+        grid-row: 2 / 3;
+    }
+
+    /*the stands page has fewer images*/
+    #scrollGridStand #start {
+        grid-column-start: 5;
+        grid-row: 2 / 3;
+    }
+
+    #start img {
+        width: 150px;
+        margin: auto;
+        /*not sure this is doing anything*/
+    }
+
+    /*^^^^^^^^^^^^^^*/
+    /*end horizontal scroll content page styling*/
+}
+
+/*^^^^^^^^^^^^^^^^^^^*/
+/*end landscape mobile or computer screen media query*/

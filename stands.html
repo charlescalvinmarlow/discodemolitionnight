@@ -1,0 +1,99 @@
+<!--document type declaration for HMTL5-->
+<!doctype html>
+
+<!--html tag contains all page code-->
+<html>
+<!--   head contains useful behind the scenes information-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A look at what was happening in the stands during Disco Demolition Night">
+    <meta name="viewport" content="width=device-width">
+    <title>The Stands</title>
+    <!--link to css-->
+    <link href="styles.css" rel="stylesheet">
+    <!--script tag with a space in it to prevent chrome showing animations before they are triggered-->
+    <script> </script>
+    <!--link JS file with conflicting script from the index page removed in order for horizontal scroll to work-->
+    <script src="horizontal_scroll.js"></script>
+</head>
+
+<!--body contains content to show in the window of the browse-->
+
+<body>
+    <!--outside div to contain everything within viewport height and create horizontal scroll-->
+    <div id="horizontalScroll">
+        <!--fix the nav at the top of the screen for when horizontally scrolled-->
+        <div id="fixNav">
+            <!--header semantic tag for website title and nav-->
+            <header>
+                <!--website title +link to index page-->
+                <a href="index.html">
+                    <p>Disco Demolition Night</p>
+                </a>
+                <!--nav semantic tag for navigation and id for reference in javascript to open nav on click-->
+                <nav id="navBlock">
+                    <ul>
+                        <li><a href="outside.html">Outside</a></li>
+                        <li><a href="stands.html">Stands</a></li>
+                        <li><a href="centerfield.html">Centerfield</a></li>
+                    </ul>
+                </nav>
+                <!--div to hold button image for clicking and showing nav in JS, empty as just a css BG image-->
+                <div id="menuBtn" class="hamburger menuIcon">
+
+                </div>
+            </header>
+        </div>
+        <!--unique page content in main-->
+        <main>
+            <!--div for holding the grid with settings for this page-->
+            <div id="scrollGridStand">
+                <!--H1 heading with page title-->
+                <h1>THE STANDS</h1>
+                <!--spacer div for filling the first column in the grid and space the scrolling of the first image properly-->
+                <div id="_spacer"></div>
+                <!--simple on screen message to provide instructions for users-->
+                <div id="scrPrompt">
+                    <p>Scroll to begin<img src="images/arrow-right.svg"></p>
+                </div>
+                <!--content images and text-->
+                <div id="scrImg1" class="fullHeight">
+                    <img src="images/signs.svg" alt="illustration of a person holding a sign that reads 'Disco Sucks'">
+                </div>
+                <div id="scrText1" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Dozens of hand-painted banners with such slogans as "Disco sucks" were hung from the ballpark's seating decks.</p>
+                    </div>
+                </div>
+                <div id="scrImg2" class="fullHeight">
+                    <img src="images/throw.svg" alt="illustration of a person about to throw a record like a frisbee">
+                </div>
+                <div id="scrText2" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>[All the guards being at the entrance] left the field unattended, and fans began throwing the uncollected disco LPs and singles from the stands. Tigers designated hitter Rusty Staub remembered that the records would slice through the air, and land sticking out of the ground. Attendees also threw firecrackers, empty liquor bottles, and lighters onto the field. The game was stopped several times because of the rain of foreign objects.</p>
+                    </div>
+                </div>
+                <div id="scrImg3" class="fullHeight">
+                    <img src="images/smoking.svg" alt="illustration of a hand holding a smoking joint">
+                </div>
+                <div id="scrText3" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Mike Veeck recalled an odor of marijuana in the grandstand and said of the attendees, "This is the Woodstock they never had." The odor permeated the press box, which Caray and his broadcast partner, Jimmy Piersall, commented on over the air.</p>
+                    </div>
+                </div>
+                <!--arrow button at the far right to return to the left-->
+                <div id="start">
+                    <a href="#_spacer">
+                        <img src="images/arrow-left.svg"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--warning to display when screen is too small-->
+    <div id="small_screen">
+        <p>Please rotate your device to landscape or make your browser fullscreen.</p>
+    </div>
+</body>
+
+</html>

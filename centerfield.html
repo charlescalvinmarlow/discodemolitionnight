@@ -1,0 +1,108 @@
+<!--document type declaration for HMTL5-->
+<!doctype html>
+
+<!--html tag contains all page code-->
+<html>
+<!--   head contains useful behind the scenes information-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A look at what was happening in the middle of the field on Disco Demolition Night.">
+    <meta name="viewport" content="width=device-width">
+    <title>Centerfield</title>
+    <!--        link to css-->
+    <link href="styles.css" rel="stylesheet">
+    <!--link JS file with conflicting script from the index page removed in order for horizontal scroll to work-->
+    <script src="horizontal_scroll.js"></script>
+    <!--script tag with a space in it to prevent chrome showing animations before they are triggered-->
+    <script> </script>
+
+</head>
+
+<!--   body contains content to show in the window of the browser -->
+
+<body>
+    <!--outside div to contain everything within viewport height and create horizontal scroll-->
+    <div id="horizontalScroll">
+        <!--fix the nav at the top of the screen for when horizontally scrolled-->
+        <div id="fixNav">
+            <!--header semantic tag for website title and nav-->
+            <header>
+                <!--website title +link to index page-->
+                <a href="index.html">
+                    <p>Disco Demolition Night</p>
+                </a>
+                <!--nav semantic tag for navigation and id for reference in javascript to open nav on click-->
+                <nav id="navBlock">
+                    <ul>
+                        <li><a href="outside.html">Outside</a></li>
+                        <li><a href="stands.html">Stands</a></li>
+                        <li><a href="centerfield.html">Centerfield</a></li>
+                    </ul>
+                </nav>
+                <!--div to hold button image for clicking and showing nav in JS, empty as just a css BG image-->
+                <div id="menuBtn" class="hamburger menuIcon"></div>
+            </header>
+        </div>
+        <!--unique page content in main-->
+        <main>
+            <!--div for holding the grid with settings for this page-->
+            <div id="scrollGridCenter">
+                <!--H1 heading with page title-->
+                <h1>Centerfield</h1>
+                <!--spacer div for filling the first space in the grid and time the scrolling of the first image properly-->
+                <div id="_spacer" class="fullHeight"></div>
+                <!--simple message to provide instructions for users-->
+                <div id="scrPrompt">
+                    <p>Scroll to begin<img src="images/arrow-right.svg"></p>
+                </div>
+                <!--content images and text-->
+                <div id="scrImg1" class="fullHeight">
+                    <img src="images/batter.svg" alt="illustration of a baseball batter">
+                </div>
+                <div id="scrText1" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>The first game ended at 8:16 p.m.; Detroit won the game, 4–1.</p>
+                    </div>
+                </div>
+                <div id="scrImg2" class="fullHeight">
+                    <img src="images/jeep.svg" alt="illustration of a jeep">
+                </div>
+                <div id="scrText2" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>At 8:40, Dahl, dressed in army fatigues and a helmet, emerged onto the playing surface together with Meier and Lorelei. They circled the field in a Jeep, showered (according to Dahl, lovingly) by his troops with firecrackers and beer, then proceeded to center field where the box containing the records awaited, rigged with explosives. Dahl and Meier warmed up the crowd, leading attendees in a chant of "disco sucks."</p>
+                    </div>
+                </div>
+                <div id="scrImg3" class="fullHeight">
+                    <img src="images/explosion.svg" alt="illustration of the box of records exploding">
+                </div>
+                <div id="scrText3" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Dahl told the crowd:</p>
+                        <blockquote>"This is now officially the world's largest anti-disco rally! Now listen—we took all the disco records you brought tonight, we got 'em in a giant box, and we're gonna blow 'em up reeeeeeal goooood."</blockquote>
+                        <p>Dahl set off the explosives, destroying the records and tearing a large hole in the outfield grass. With most of the security personnel still watching the gates per Mike Veeck's orders, there was almost no one guarding the playing surface.</p>
+                    </div>
+                </div>
+                <div id="scrImg4" class="fullHeight">
+                    <img src="images/runner.svg" alt="illustration of a man running">
+                </div>
+                <div id="scrText4" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Soon, the first of 5,000 to 7,000 attendees rushed onto the field. Some climbed the foul poles, while others set records on fire or ripped up the grass. The batting cage was destroyed, and the bases were pulled up and stolen. As Bill Veeck stood with a microphone near where home plate had been, begging people to return to the stands, a bonfire raged in center field. Caray unsuccessfully attempted to restore order via the public address system. The scoreboard, flashing "PLEASE RETURN TO YOUR SEATS", was ignored, as was the playing of "Take Me Out to the Ball Game". Some attendees danced in circles around the burning vinyl shards. At 9:08 p.m., Chicago police in riot gear arrived, to the applause of the baseball fans remaining in the stands. Those on the field hastily dispersed upon seeing the police.</p>
+                    </div>
+                </div>
+                <!--arrow button to return to the left-->
+                <div id="start">
+                    <a href="#_spacer"><img src="images/arrow-left.svg"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--warning to display when scren is too small-->
+    <div id="small_screen">
+        <p>Please rotate your device to landscape or make your browser fullscreen.</p>
+    </div>
+
+</body>
+
+</html>

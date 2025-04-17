@@ -1,0 +1,106 @@
+<!--document type declaration for HMTL5-->
+<!doctype html>
+
+<!--html tag contains all page code-->
+<html>
+<!--   head contains useful behind the scenes information-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A look at what was happening outside the stadium on Disco Demolition Night.">
+    <meta name="viewport" content="width=device-width">
+    <title>Outside</title>
+    <!--        link to css-->
+    <link href="styles.css" rel="stylesheet">
+    <!--link JS file with conflicting script from the index page removed in order for horizontal scroll to work-->
+    <script src="horizontal_scroll.js"></script>
+    <!--script tag with a space in it to prevent chrome showing animations before they are triggered-->
+    <script> </script>
+
+</head>
+
+<!--   body contains content to show in the window of the browser -->
+
+<body>
+    <!--outside div to contain everything within viewport height and create horizontal scroll-->
+    <div id="horizontalScroll">
+        <!--fix the nav at the top of the screen for when horizontally scrolled-->
+        <div id="fixNav">
+            <!--header semantic tag for website title and nav-->
+            <header>
+                <!--website title +link to index page-->
+                <a href="index.html">
+                    <p>Disco Demolition Night</p>
+                </a>
+                <!--nav semantic tag for navigation and id for reference in javascript to open nav on click-->
+                <nav id="navBlock">
+                    <ul>
+                        <li><a href="outside.html">Outside</a></li>
+                        <li><a href="stands.html">Stands</a></li>
+                        <li><a href="centerfield.html">Centerfield</a></li>
+                    </ul>
+                </nav>
+                <!--div to hold button image for clicking and showing nav in JS, empty as just a css BG image-->
+                <div id="menuBtn" class="hamburger menuIcon"></div>
+            </header>
+        </div>
+        <!--unique page content in main-->
+        <main>
+            <!--div for holding the grid with settings for this page-->
+            <div id="scrollGridOutside">
+                <!--H1 heading with page title-->
+                <h1>Outside</h1>
+                <!--spacer div for filling the first space in the grid and space the scrolling of the first image properly-->
+                <div id="_spacer" class="fullHeight"></div>
+                <!--simple on screen message to provide instructions for users-->
+                <div id="scrPrompt">
+                    <p>Scroll to begin<img src="images/arrow-right.svg"></p>
+                </div>
+                <!--content images and text-->
+                <div id="scrImg1" class="fullHeight">
+                    <img src="images/mans_with_beer.svg" alt="illustration of man holding a beer">
+                </div>
+                <div id="scrText1" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>The doubleheader sold out, leaving at least 20,000 people outside the ballpark.</p>
+                    </div>
+                </div>
+                <div id="scrImg2" class="fullHeight">
+                    <img src="images/turnstile.svg" alt="illustration of man jumping a turnstile">
+                </div>
+                <div id="scrText2" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Some leapt turnstiles, climbed fences, and entered through open windows.</p>
+                    </div>
+                </div>
+                <div id="scrImg3" class="fullHeight">
+                    <img src="images/seccy.svg" alt="illustration of a security guard">
+                </div>
+                <div id="scrText3" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>[The promotions director] received word that thousands of people were trying to get into the park without tickets and sent his security personnel to the stadium gates to stop them.</p>
+                    </div>
+                </div>
+                <div id="scrImg4" class="fullHeight">
+                    <img src="images/crate.svg" alt="illustration of a big crate full of records">
+                </div>
+                <div id="scrText4" class="scrollInfoText">
+                    <div class="textHover">
+                        <p>Attendees were supposed to deposit their records into a large box, some 4 by 6 by 5 feet (1.2 by 1.8 by 1.5 m) tall; once the box was overflowing, many people brought their discs to their seats.</p>
+                    </div>
+                </div>
+                <!--arrow button at the far right to return to the left-->
+                <div id="start">
+                    <a href="#_spacer"><img src="images/arrow-left.svg"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!--warning to display when screen is too small-->
+    <div id="small_screen">
+        <p>Please rotate your device to landscape or make your browser fullscreen.</p>
+    </div>
+
+</body>
+
+</html>

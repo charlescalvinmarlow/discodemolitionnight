@@ -1,0 +1,95 @@
+<!--document type declaration for HMTL5-->
+<!doctype html>
+
+<!--html tag contains all page code-->
+<html>
+<!--   head contains useful behind the scenes information-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Exploring the events that occured on Disco Demolition night in 1979.">
+    <meta name="viewport" content="width=device-width">
+    <title>Disco Demolition Night</title>
+    <!--link to css-->
+    <link href="styles.css" rel="stylesheet">
+    <!--script tag with a space in it to prevent chrome showing animations before they are triggered-->
+    <script> </script>
+    <!--link to JS file-->
+    <script src="nav_menu.js"></script>
+</head>
+
+<!--   body contains content to show in the window of the browser -->
+
+<body>
+    <div>
+        <!--idk if this is needed-->
+        <!--header semantic tag for website title and nav-->
+        <header>
+            <!--website title +link to index page-->
+            <a href=#>
+                <h1>Disco Demolition Night</h1>
+            </a>
+            <!--nav semantic tag for navigation and id for reference in javascript to open nav on click-->
+            <nav id="navBlock">
+                <ul>
+                    <li><a href="outside.html">Outside</a></li>
+                    <li><a href="stands.html">Stands</a></li>
+                    <li><a href="centerfield.html">Centerfield</a></li>
+                </ul>
+            </nav>
+            <!--div to hold button image for clicking and showing nav in JS, empty as just a css BG image-->
+            <div id="menuBtn" class="hamburger menuIcon"></div>
+        </header>
+
+        <main>
+            <!--splash screen introducing the topic which is hidden after the first visit to index page in JS-->
+            <div id="screencover">
+                <div id="intro">
+                    <p>Disco Demolition Night was a Major League Baseball promotion on Thursday, July 12, 1979, at Comiskey Park in Chicago, Illinois, that ended in a riot.</p>
+                    <div id="expBtn">
+                        <p>Explore</p>
+                    </div>
+
+                </div>
+            </div>
+            <!--div holding main links to content pages and some graphics-->
+            <div id="interact">
+                <div id="_outside" class="hoverLink">
+                    <a href="outside.html">
+                        <h2>Outside</h2>
+                    </a>
+                </div>
+                <div id="_stand" class="hoverLink">
+                    <a href="stands.html">
+                        <h2>The Stands</h2>
+                    </a>
+                </div>
+                <div id="_centerfield" class="hoverLink">
+                    <a href="centerfield.html">
+                        <h2>Centerfield</h2>
+                    </a>
+                </div>
+                <div id="smallCredits">
+                    <p><a href="https://en.wikipedia.org/wiki/Disco_Demolition_Night" target="_blank">Disco Demolition Night</a> on Wikipedia.</p>
+                </div>
+                <div id="largeCredits">
+                    <p>This website is based off and uses content from Wikipedia. Visit <a href="https://en.wikipedia.org/wiki/Disco_Demolition_Night" target="_blank">Disco Demolition Night</a> on Wikipedia.</p>
+                </div>
+                <div id="indImg1">
+                    <img src="images/smoking.svg" alt="illstration of a hand with a smoking cigarette">
+                </div>
+                <div id="indImg2">
+                    <img src="images/mans_with_beer.svg" alt="illustration of a man casually holding a beer">
+                </div>
+                <div id="indImg3">
+                    <img src="images/signs.svg" alt="illustration of someone holding a sign that reads 'Disco Sucks'">
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="small_screen">
+        <p>Please rotate your device to landscape or make your browser fullscreen.</p>
+    </div>
+</body>
+
+</html>
